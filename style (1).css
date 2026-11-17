@@ -1,0 +1,544 @@
+/* =========================================================
+   Manit Singh Chopra – Resume Website Stylesheet
+   ========================================================= */
+
+/* ---------- 1. Colour palette & variables ---------- */
+:root {
+  --ink: #1f1d2b;          /* deep charcoal – text & dark sections */
+  --cream: #faf6f0;        /* warm off-white background */
+  --sand: #f1e8dc;         /* alternate section background */
+  --accent: #c8553d;       /* terracotta – buttons, highlights */
+  --accent-soft: #f4d9cf;  /* light terracotta for tags */
+  --muted: #6b6878;        /* secondary text */
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(31, 29, 43, 0.08);
+  --max-width: 1100px;
+}
+
+/* ---------- 2. Reset & element selectors ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- 3. Navigation bar (flexbox + sticky) ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 246, 240, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(31, 29, 43, 0.08);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-cta {
+  background-color: var(--ink);
+  color: var(--white) !important;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.nav-cta:hover {
+  background-color: var(--accent);
+}
+
+/* ---------- 4. Hero section ---------- */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 90px 24px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1.4;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  font-size: 3.6rem;
+  margin: 8px 0 14px;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.hero-sub {
+  color: var(--muted);
+  margin: 12px 0 30px;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.btn-outline {
+  border: 2px solid var(--ink);
+}
+
+.btn-outline:hover {
+  background-color: var(--ink);
+  color: var(--white);
+}
+
+.hero-card {
+  flex: 1;
+  background-color: var(--ink);
+  color: var(--cream);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.quick-facts li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(250, 246, 240, 0.15);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.quick-facts li:last-child {
+  border-bottom: none;
+}
+
+.quick-facts span {
+  color: #b9b4c8;
+  font-size: 0.85rem;
+}
+
+/* ---------- 5. Shared section styles (class selectors) ---------- */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* full-width coloured band, content kept aligned with other sections */
+.section-alt {
+  max-width: none;
+  background-color: var(--sand);
+  padding-left: max(24px, calc((100% - var(--max-width)) / 2 + 24px));
+  padding-right: max(24px, calc((100% - var(--max-width)) / 2 + 24px));
+}
+
+.section-title {
+  font-size: 2.3rem;
+  margin-bottom: 36px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- 6. About (ID selector) ---------- */
+#about .about-text {
+  font-size: 1.1rem;
+  max-width: 760px;
+  color: #3c3a48;
+}
+
+.stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 180px;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: var(--accent);
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- 7. Education timeline (position: relative/absolute) ---------- */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: rgba(200, 85, 61, 0.35);
+}
+
+.timeline-item {
+  position: relative;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 26px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 3px solid var(--sand);
+}
+
+.timeline-item h3 {
+  font-size: 1.25rem;
+  margin: 4px 0;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- 8. Experience cards (CSS grid) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid transparent;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-top-color: var(--accent);
+}
+
+.card.featured {
+  border-top-color: var(--accent);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
+.role {
+  font-weight: 600;
+  color: var(--muted);
+  margin: 4px 0 14px;
+  font-size: 0.95rem;
+}
+
+.card ul li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+  font-size: 0.93rem;
+  color: #3c3a48;
+}
+
+.card ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ---------- 9. Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.skill-group {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.skill-group h3 {
+  margin-bottom: 14px;
+  font-size: 1.15rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: var(--accent-soft);
+  color: #8a3423;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* ---------- 10. Achievements ---------- */
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.achievements li {
+  background-color: var(--white);
+  padding: 18px 20px 18px 52px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.achievements li::before {
+  content: "★";
+  position: absolute;
+  left: 20px;
+  top: 17px;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* ---------- 11. Contact ---------- */
+.contact {
+  max-width: none;
+  background-color: var(--ink);
+  color: var(--cream);
+  text-align: center;
+}
+
+.section-title.light::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact p {
+  color: #b9b4c8;
+  margin-bottom: 28px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  border: 1px solid rgba(250, 246, 240, 0.3);
+  padding: 12px 22px;
+  border-radius: 999px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.contact-links a:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- 12. Footer ---------- */
+footer {
+  background-color: #17151f;
+  color: #8c879c;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+/* ---------- 13. Responsive (mobile) ---------- */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-card {
+    width: 100%;
+    text-align: left;
+  }
+}
